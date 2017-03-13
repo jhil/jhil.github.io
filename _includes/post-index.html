@@ -4,7 +4,7 @@
   <a href="{% if post.external %}{{ post.external }}{% else %}{{ post.url | prepend: site.baseurl }}{% endif %}" class="post-item-wrapper">
     <li class="post-item-{{ include.style }}">
       <div class="post-image post-image-{{ include.style }}">
-        <img src="/img/{{ post.url | slugify }}/{{ post.thumb }}">
+        <img src="/img/res/400/{{ post.url | slugify }}/{{ post.thumb }}">
       </div>
       <div class="post-info-wrapper">
         <div class="post-info post-info-{{ include.style }}">

@@ -1,1 +1,11 @@
-<img src="/img/{{ page.url | slugify }}/{{ include.src }}{{ include.ext }}" class="{{ include.class }}">
+{% capture key %}{{ page.url | slugify }}/{{ include.src }}{{ include.ext }}{% endcapture %}
+<figure class="progressive-image {{ include.class }}"
+        data-small="/img/res/400/{{ key }}"
+        data-medium="/img/res/800/{{ key }}"
+        data-large="/img/res/1600/{{ key }}"
+        data-raw="/img/res/raw/{{ key }}">
+    <div class="aspect-ratio-holder"
+        style="padding-bottom: {{1.0 | divided_by: site.data.responsiveMetadata.aspectRatios[key] | times: 100 }}%"></div>
+    <img class="thumbnail"
+        src="/img/res/20/{{ key }}" alt="">
+</figure>
